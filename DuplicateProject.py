@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 import os
 import re
 import shutil
 import codecs
 
 listexts = ("cpp", "h", "c", "cc", "tlh", "tli", "dsw", "dsp", "txt", "hpp", "rc", "rc2", "def", "sln", "vcproj", "vcxproj", "filters")
-encs = ("gbk", "utf-8", "usc-2")
+encs = ("gbk", "utf-8", "utf-16-le", "utf-16-be")
 
 def DuplicateProject():
     oriprjpath = input("Please input the original project path:")
@@ -79,9 +80,9 @@ def ReplaceInFile(newprjpath, newprjname, oriprjname):
                         fh.readline()
                         fh.close()
                     except UnicodeDecodeError:
-                        print('got unicode error with %s , trying different encoding' % e)
+                        print('got unicode error with', e, 'trying different encoding')
                     else:
-                        print('opening the file with encoding:  %s ' % e)
+                        print('opening', name, 'with encoding: ', e)
                         en = e
                         break
                 
