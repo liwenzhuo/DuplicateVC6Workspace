@@ -93,7 +93,7 @@ def ReplaceInFile(newprjpath, newprjname, oriprjname):
                 #ost = re.sub(oriprjname, newprjname, text)
                 ost = lowre.sub(newprjname, text)
                 ost = upperre.sub(newprjname.upper(), ost)
-                ost2 = codecs.encode(ost)
+                ost2 = codecs.encode(ost,en)
                 fp = open(srcname, 'wb')
                 fp.write(ost2)
                 fp.close()
