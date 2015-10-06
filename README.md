@@ -1,7 +1,7 @@
 DuplicateVC6Workspace
 =====================
 
-Duplicate a VC6 Workspace use python 3
+Duplicate a VC6 Workspace or VS solution use python 3
 
 First, enter the workspace path.
 
